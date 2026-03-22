@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mad Nectar Apiary — Pure. Raw. Honey.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;600;700&family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* GLOBAL LINK COLOR RESET */
+a, a:link, a:visited, a:hover, a:active {
+color: inherit !important;
+text-decoration: none !important;
+}
+
+:root {
+–honey: #E8A820;
+–deep-honey: #C47D0A;
+–amber: #F5C842;
+–dark: #1A1108;
+–ink: #2A1F0A;
+–cream: #FBF5E6;
+–wax: #F7EDD0;
+–warm-white: #FFFDF5;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+background: var(–warm-white);
+color: var(–ink);
+font-family: ‘Cormorant Garamond’, Georgia, serif;
+overflow-x: hidden;
+cursor: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘24’ height=‘24’ viewBox=‘0 0 24 24’%3E%3Ctext y=‘20’ font-size=‘20’%3E🐝%3C/text%3E%3C/svg%3E”) 12 12, auto;
+}
+
+/* Real logo styles */
+.hat-illustration {
+width: 220px;
+height: auto;
+margin: 0 auto 1.5rem;
+animation: float 6s ease-in-out infinite;
+filter: drop-shadow(0 8px 24px rgba(232,168,32,0.4));
+border-radius: 12px;
+}
+
+.logo-banner {
+width: 100%;
+background: #f5f0e8;
+display: flex;
+justify-content: center;
+align-items: center;
+padding: 3rem 2rem;
+border-top: 3px solid var(–honey);
+border-bottom: 3px solid var(–honey);
+}
+.banner-img {
+max-width: 800px;
+width: 100%;
+height: auto;
+object-fit: contain;
+}
+
+/* NAV LOGO FORCE FIX */
+nav a.nav-logo,
+nav a.nav-logo:link,
+nav a.nav-logo:visited,
+nav a.nav-logo:hover {
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+text-decoration: none !important;
+font-family: ‘Cinzel Decorative’, Georgia, serif !important;
+font-size: 1.2rem !important;
+}
+
+/* === HEXAGON PATTERN === */
+.hex-bg {
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘56’ height=‘100’%3E%3Cpath d=‘M28 66L0 50V18L28 2l28 16v32L28 66zM28 66v34M56 50l-28 16M0 50l28 16’ fill=‘none’ stroke=’%23E8A820’ stroke-opacity=‘0.12’ stroke-width=‘1’/%3E%3C/svg%3E”);
+}
+
+/* === HERO === */
+.hero {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+position: relative;
+overflow: hidden;
+background: #1A1108 !important;
+background-color: #1A1108 !important;
+}
+
+.hero-hex-overlay {
+position: absolute; inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘56’ height=‘100’%3E%3Cpath d=‘M28 66L0 50V18L28 2l28 16v32L28 66zM28 66v34M56 50l-28 16M0 50l28 16’ fill=‘none’ stroke=’%23E8A820’ stroke-opacity=‘0.08’ stroke-width=‘1’/%3E%3C/svg%3E”);
+opacity: 0.6;
+}
+
+/* Dripping honey from top */
+.honey-drip-container {
+position: absolute; top: 0; left: 0; right: 0;
+height: 120px; overflow: hidden; pointer-events: none;
+}
+.honey-drip {
+position: absolute; top: -20px;
+width: 18px;
+background: linear-gradient(to bottom, var(–honey), var(–deep-honey));
+border-radius: 0 0 50% 50%;
+animation: drip 4s ease-in-out infinite;
+opacity: 0.85;
+}
+.honey-drip:nth-child(1)  { left: 5%;   height: 55px; animation-delay: 0s;    animation-duration: 5.2s; width: 14px; }
+.honey-drip:nth-child(2)  { left: 13%;  height: 75px; animation-delay: 0.8s;  animation-duration: 4.8s; width: 20px; }
+.honey-drip:nth-child(3)  { left: 22%;  height: 45px; animation-delay: 1.5s;  animation-duration: 6s;   width: 12px; }
+.honey-drip:nth-child(4)  { left: 31%;  height: 90px; animation-delay: 0.3s;  animation-duration: 5s;   width: 22px; }
+.honey-drip:nth-child(5)  { left: 41%;  height: 60px; animation-delay: 2s;    animation-duration: 4.5s; width: 16px; }
+.honey-drip:nth-child(6)  { left: 50%;  height: 80px; animation-delay: 1.1s;  animation-duration: 5.8s; width: 18px; }
+.honey-drip:nth-child(7)  { left: 59%;  height: 50px; animation-delay: 0.6s;  animation-duration: 4.9s; width: 14px; }
+.honey-drip:nth-child(8)  { left: 68%;  height: 95px; animation-delay: 1.8s;  animation-duration: 5.3s; width: 24px; }
+.honey-drip:nth-child(9)  { left: 77%;  height: 65px; animation-delay: 0.4s;  animation-duration: 6.1s; width: 16px; }
+.honey-drip:nth-child(10) { left: 87%;  height: 72px; animation-delay: 1.3s;  animation-duration: 4.7s; width: 20px; }
+.honey-drip:nth-child(11) { left: 95%;  height: 48px; animation-delay: 2.2s;  animation-duration: 5.5s; width: 13px; }
+
+@keyframes drip {
+0%, 100% { transform: scaleY(1); opacity: 0.85; }
+50% { transform: scaleY(1.08); opacity: 1; }
+}
+
+.hero-content {
+position: relative; z-index: 2;
+text-align: center;
+padding: 2rem;
+animation: fadeUp 1.2s ease both;
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(40px); }
+to   { opacity: 1; transform: translateY(0); }
+}
+
+.hero-eyebrow {
+font-family: ‘Cormorant Garamond’, Georgia, serif;
+font-style: italic;
+font-size: 1rem;
+letter-spacing: 0.35em;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+text-transform: uppercase;
+margin-bottom: 1.5rem;
+opacity: 0.9;
+}
+
+/* Top hat SVG illustration */
+.hat-illustration {
+width: 160px; height: auto;
+margin: 0 auto 1.5rem;
+animation: float 6s ease-in-out infinite;
+filter: drop-shadow(0 8px 24px rgba(232,168,32,0.3));
+}
+@keyframes float {
+0%, 100% { transform: translateY(0) rotate(-1deg); }
+50% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.hero-title {
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: clamp(2.8rem, 8vw, 5.5rem);
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+line-height: 1.1;
+margin-bottom: 0.4rem;
+text-shadow: 0 2px 40px rgba(232,168,32,0.4);
+letter-spacing: 0.05em;
+}
+.hero-title span { color: #E8A820 !important; -webkit-text-fill-color: #E8A820 !important; }
+
+.hero-subtitle {
+font-family: ‘Cinzel’, Georgia, serif;
+color: #F5C842 !important;
+-webkit-text-fill-color: #F5C842 !important;
+font-size: clamp(1.1rem, 3vw, 1.6rem);
+letter-spacing: 0.4em;
+color: var(–amber);
+text-transform: uppercase;
+margin-bottom: 0.8rem;
+}
+
+.hero-tagline {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+font-size: clamp(1rem, 2.5vw, 1.3rem);
+color: rgba(251,245,230,0.92);
+margin-bottom: 2.5rem;
+letter-spacing: 0.05em;
+}
+
+.hero-location {
+font-size: 0.85rem;
+letter-spacing: 0.3em;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+text-transform: uppercase;
+margin-bottom: 3rem;
+}
+
+.btn-primary {
+display: inline-block;
+padding: 0.9rem 2.8rem;
+border: 2px solid #E8A820;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+font-family: ‘Cormorant Garamond’, Georgia, serif;
+font-size: 1rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+text-decoration: none !important;
+transition: all 0.3s ease;
+position: relative;
+overflow: hidden;
+}
+.btn-primary::before {
+content: ‘’;
+position: absolute; inset: 0;
+background: var(–honey);
+transform: translateX(-101%);
+transition: transform 0.3s ease;
+z-index: -1;
+}
+.btn-primary:hover { color: var(–dark); }
+.btn-primary:hover::before { transform: translateX(0); }
+
+/* Floating bees */
+.bee {
+position: absolute;
+font-size: 1.4rem;
+animation: beeFly linear infinite;
+pointer-events: none;
+opacity: 0.7;
+}
+.bee:nth-child(1) { top: 20%; left: 10%; animation-duration: 18s; animation-delay: 0s; }
+.bee:nth-child(2) { top: 60%; left: 85%; animation-duration: 22s; animation-delay: -5s; }
+.bee:nth-child(3) { top: 40%; left: 75%; animation-duration: 15s; animation-delay: -8s; }
+.bee:nth-child(4) { top: 75%; left: 20%; animation-duration: 20s; animation-delay: -12s; }
+@keyframes beeFly {
+0%   { transform: translate(0,0) rotate(0deg); }
+25%  { transform: translate(40px,-30px) rotate(15deg); }
+50%  { transform: translate(-20px,20px) rotate(-10deg); }
+75%  { transform: translate(30px,40px) rotate(20deg); }
+100% { transform: translate(0,0) rotate(0deg); }
+}
+
+/* === NAV === */
+nav {
+position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+display: flex; align-items: center; justify-content: space-between;
+padding: 1.2rem 3rem;
+background: rgba(26,17,8,0.92);
+backdrop-filter: blur(8px);
+border-bottom: 1px solid rgba(232,168,32,0.2);
+}
+.nav-logo {
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: 1.5rem;
+color: var(–honey);
+text-decoration: none;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+font-family: ‘Cormorant Garamond’, Georgia, serif;
+font-size: 0.85rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: var(–cream);
+text-decoration: none;
+opacity: 0.75;
+transition: opacity 0.2s, color 0.2s;
+}
+.nav-links a:hover { opacity: 1; color: var(–honey); }
+
+/* === DIVIDER === */
+.section-divider {
+text-align: center;
+padding: 1rem 0;
+color: var(–honey);
+font-size: 1.2rem;
+letter-spacing: 1rem;
+opacity: 0.5;
+}
+
+/* === STORY SECTION === */
+.story {
+padding: 7rem 2rem;
+background: var(–cream);
+position: relative;
+}
+.story::before {
+display: none;
+}
+.story-inner {
+max-width: 860px;
+margin: 0 auto;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 5rem;
+align-items: center;
+}
+.story-text h2 {
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: clamp(1.8rem, 4vw, 3rem);
+color: var(–ink);
+margin-bottom: 1.5rem;
+line-height: 1.3;
+}
+.story-text h2 em {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+color: var(–deep-honey);
+font-size: 0.7em;
+display: block;
+}
+.story-text p {
+font-size: 1.15rem;
+line-height: 1.85;
+color: #3d2d0f;
+margin-bottom: 1.2rem;
+font-weight: 300;
+}
+.story-image-box {
+position: relative;
+}
+.stamp-circle {
+width: 280px; height: 280px;
+margin: 0 auto;
+background: white;
+border-radius: 50%;
+border: 3px solid var(–ink);
+display: flex; align-items: center; justify-content: center;
+box-shadow: 6px 6px 0 var(–honey), inset 0 0 40px rgba(232,168,32,0.1);
+position: relative;
+overflow: hidden;
+animation: wobble 8s ease-in-out infinite;
+}
+@keyframes wobble {
+0%,100% { transform: rotate(-1deg); }
+50% { transform: rotate(1.5deg); }
+}
+.stamp-circle svg { width: 80%; height: 80%; }
+/* curved text path */
+.stamp-text {
+position: absolute; inset: 0;
+width: 100%; height: 100%;
+}
+
+/* === HONEY VARIETIES === */
+.varieties {
+padding: 7rem 2rem;
+background: var(–dark);
+position: relative;
+overflow: hidden;
+}
+.varieties-hex-bg {
+position: absolute; inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘56’ height=‘100’%3E%3Cpath d=‘M28 66L0 50V18L28 2l28 16v32L28 66zM28 66v34M56 50l-28 16M0 50l28 16’ fill=‘none’ stroke=’%23E8A820’ stroke-opacity=‘0.06’ stroke-width=‘1’/%3E%3C/svg%3E”);
+}
+.varieties-inner {
+position: relative; z-index: 2;
+max-width: 1100px; margin: 0 auto;
+}
+.section-header {
+text-align: center;
+margin-bottom: 4rem;
+}
+.section-header .eyebrow {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+font-size: 1rem;
+color: var(–honey);
+letter-spacing: 0.2em;
+margin-bottom: 0.75rem;
+display: block;
+}
+.section-header h2 {
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: clamp(2rem, 4vw, 3.5rem);
+color: var(–cream);
+letter-spacing: 0.03em;
+}
+.varieties-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 2rem;
+}
+.variety-card {
+background: #1e160a;
+border: 1px solid rgba(232,168,32,0.2);
+padding: 2.5rem 2rem;
+text-align: center;
+position: relative;
+transition: transform 0.3s, background 0.3s;
+clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px));
+}
+.variety-card:hover {
+transform: translateY(-6px);
+background: rgba(232,168,32,0.08);
+}
+.variety-card .icon { font-size: 2.8rem; margin-bottom: 1rem; display: block; }
+.variety-card h3 {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-size: 1.5rem;
+color: #E8A820 !important;
+margin-bottom: 0.75rem;
+font-style: italic;
+}
+.variety-card p {
+font-size: 1rem;
+color: #FBF5E6 !important;
+line-height: 1.7;
+font-weight: 400;
+}
+.variety-label {
+display: inline-block;
+margin-top: 1.2rem;
+font-size: 0.75rem;
+letter-spacing: 0.25em;
+text-transform: uppercase;
+color: #F5C842 !important;
+border: 1px solid rgba(245,200,66,0.5);
+padding: 0.3rem 0.8rem;
+}
+
+/* === PROCESS === */
+.process {
+padding: 7rem 2rem;
+background: var(–wax);
+position: relative;
+overflow: hidden;
+}
+.process-inner { max-width: 1000px; margin: 0 auto; }
+.process .section-header h2 { color: var(–ink); }
+.process .section-header .eyebrow { color: var(–deep-honey); }
+
+.steps {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 0;
+position: relative;
+}
+.steps::before {
+content: ‘’;
+position: absolute;
+top: 48px; left: 12.5%; right: 12.5%;
+height: 2px;
+background: linear-gradient(to right, var(–honey), var(–deep-honey), var(–honey));
+z-index: 0;
+}
+.step {
+text-align: center;
+position: relative;
+z-index: 1;
+padding: 0 1rem;
+}
+.step-num {
+width: 56px; height: 56px;
+background: var(–dark);
+border: 2px solid var(–honey);
+border-radius: 50%;
+display: flex; align-items: center; justify-content: center;
+margin: 0 auto 1.5rem;
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: 1.6rem;
+color: var(–honey);
+position: relative;
+transition: transform 0.3s;
+}
+.step:hover .step-num { transform: scale(1.15) rotate(10deg); }
+.step h4 {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-size: 1.1rem;
+color: var(–ink);
+margin-bottom: 0.5rem;
+font-style: italic;
+}
+.step p {
+font-size: 0.9rem;
+color: #5a3e15;
+line-height: 1.6;
+font-weight: 300;
+}
+
+/* === QUOTE BANNER === */
+.quote-banner {
+padding: 5rem 2rem;
+background: linear-gradient(135deg, var(–honey) 0%, var(–deep-honey) 100%);
+text-align: center;
+position: relative;
+overflow: hidden;
+}
+.quote-banner::before {
+content: ‘🐝’;
+position: absolute;
+font-size: 12rem;
+opacity: 0.08;
+top: -2rem; right: 5%;
+animation: float 7s ease-in-out infinite;
+}
+.quote-banner blockquote {
+font-family: ‘Cinzel Decorative’, Georgia, ‘Times New Roman’, serif;
+font-size: clamp(1.6rem, 4vw, 2.8rem);
+color: var(–dark);
+max-width: 800px;
+margin: 0 auto 1rem;
+line-height: 1.4;
+letter-spacing: 0.08em;
+}
+.quote-banner cite {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+font-size: 1rem;
+color: rgba(26,17,8,0.65);
+letter-spacing: 0.15em;
+}
+
+/* === CONTACT === */
+.contact {
+padding: 7rem 2rem;
+background: #1A1108 !important;
+background-color: #1A1108 !important;
+text-align: center;
+}
+.contact .section-header h2 {
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+}
+.contact .eyebrow {
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+}
+.contact-grid {
+display: flex;
+justify-content: center;
+gap: 2.5rem;
+margin-top: 3rem;
+flex-wrap: wrap;
+flex-direction: column;
+align-items: center;
+}
+.contact-item {
+color: #FBF5E6 !important;
+text-decoration: none;
+}
+.contact-item .ci-label {
+font-size: 0.75rem;
+letter-spacing: 0.3em;
+text-transform: uppercase;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+margin-bottom: 0.4rem;
+display: block;
+}
+.contact-item .ci-value {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+font-size: 1.3rem;
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+transition: color 0.2s;
+}
+
+/* === FOOTER === */
+footer {
+padding: 2.5rem 2rem;
+background: #0f0b04;
+text-align: center;
+border-top: 1px solid rgba(232,168,32,0.15);
+}
+footer p {
+font-size: 0.8rem;
+color: rgba(251,245,230,0.3);
+letter-spacing: 0.2em;
+}
+footer span { color: var(–honey); }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+nav { padding: 1rem 1.5rem; }
+.nav-links { display: none; }
+.story-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+.varieties-grid { grid-template-columns: 1fr; }
+.steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+.steps::before { display: none; }
+.contact-grid { gap: 2rem; }
+}
+
+/* scroll reveal */
+.reveal {
+opacity: 1;
+transform: translateY(0);
+transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal.animate {
+opacity: 0;
+transform: translateY(30px);
+}
+.reveal.animate.visible {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* CONTACT SECTION FORCE OVERRIDE */
+section.contact {
+background: #1A1108 !important;
+background-color: #1A1108 !important;
+}
+section.contact * {
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+}
+section.contact .ci-label,
+section.contact .eyebrow {
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+}
+section.contact h2 {
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+}
+
+/* PROCESS SECTION FORCE OVERRIDE */
+section.process {
+background: #F7EDD0 !important;
+background-color: #F7EDD0 !important;
+}
+section.process * {
+color: #2A1F0A !important;
+-webkit-text-fill-color: #2A1F0A !important;
+}
+section.process .eyebrow {
+color: #C47D0A !important;
+-webkit-text-fill-color: #C47D0A !important;
+}
+section.process h2 {
+color: #2A1F0A !important;
+-webkit-text-fill-color: #2A1F0A !important;
+}
+section.process .step-num {
+background: #1A1108 !important;
+border: 2px solid #E8A820 !important;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+width: 56px !important;
+height: 56px !important;
+border-radius: 50% !important;
+display: flex !important;
+align-items: center !important;
+justify-content: center !important;
+margin: 0 auto 1.5rem !important;
+font-size: 1.4rem !important;
+}
+section.process .step h4 {
+color: #2A1F0A !important;
+-webkit-text-fill-color: #2A1F0A !important;
+font-style: italic !important;
+}
+section.process .step p {
+color: #5a3e15 !important;
+-webkit-text-fill-color: #5a3e15 !important;
+}
+
+/* Fix large white gap - remove extra padding from varieties section */
+section.varieties {
+background: #1A1108 !important;
+background-color: #1A1108 !important;
+padding-bottom: 4rem !important;
+}
+
+/* Fix story section background */
+section.story {
+background: #FBF5E6 !important;
+background-color: #FBF5E6 !important;
+}
+
+/* === MARKETS SECTION === */
+section.markets {
+padding: 7rem 2rem;
+background: #1A1108 !important;
+background-color: #1A1108 !important;
+position: relative;
+overflow: hidden;
+}
+section.markets::before {
+content: ‘’;
+position: absolute; inset: 0;
+background-image: url(“data:image/svg+xml,%3Csvg xmlns=‘http://www.w3.org/2000/svg’ width=‘56’ height=‘100’%3E%3Cpath d=‘M28 66L0 50V18L28 2l28 16v32L28 66zM28 66v34M56 50l-28 16M0 50l28 16’ fill=‘none’ stroke=’%23E8A820’ stroke-opacity=‘0.06’ stroke-width=‘1’/%3E%3C/svg%3E”);
+pointer-events: none;
+}
+.markets-inner {
+max-width: 1000px;
+margin: 0 auto;
+position: relative;
+z-index: 2;
+}
+section.markets .section-header h2 {
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+}
+section.markets .eyebrow {
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+}
+.markets-grid {
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 1.5rem;
+margin-top: 3rem;
+}
+.market-card {
+background: rgba(251,245,230,0.05);
+border: 1px solid rgba(232,168,32,0.25);
+border-radius: 4px;
+padding: 2rem 1.5rem;
+text-align: center;
+transition: transform 0.3s, background 0.3s;
+}
+.market-card:hover {
+transform: translateY(-4px);
+background: rgba(232,168,32,0.08);
+}
+.market-card.antique {
+grid-column: 1 / -1;
+background: rgba(232,168,32,0.07);
+border-color: rgba(232,168,32,0.4);
+}
+.market-icon {
+font-size: 2.2rem;
+display: block;
+margin-bottom: 0.75rem;
+}
+.market-card h3 {
+font-family: ‘Cinzel Decorative’, Georgia, serif !important;
+font-size: 1rem !important;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+margin-bottom: 0.75rem;
+line-height: 1.3;
+}
+.market-detail {
+font-family: ‘IM Fell English’, Georgia, serif;
+font-style: italic;
+font-size: 1.1rem;
+color: #FBF5E6 !important;
+-webkit-text-fill-color: #FBF5E6 !important;
+margin-bottom: 0.3rem;
+}
+.market-sub {
+font-size: 0.9rem;
+color: rgba(251,245,230,0.65) !important;
+-webkit-text-fill-color: rgba(251,245,230,0.65) !important;
+margin-bottom: 0.75rem;
+line-height: 1.5;
+}
+.market-location {
+font-size: 0.8rem;
+letter-spacing: 0.1em;
+color: #E8A820 !important;
+-webkit-text-fill-color: #E8A820 !important;
+opacity: 0.8;
+}
+@media (max-width: 600px) {
+.markets-grid {
+grid-template-columns: 1fr;
+}
+.market-card.antique {
+grid-column: 1;
+}
+}
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <a href="#" class="nav-logo">Mad Nectar</a>
+  <ul class="nav-links">
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#honey">The Honey</a></li>
+    <li><a href="#process">The Process</a></li>
+    <li><a href="#markets">Find Us</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <div class="hero-hex-overlay"></div>
+  <div class="honey-drip-container">
+    <div class="honey-drip"></div><div class="honey-drip"></div>
+    <div class="honey-drip"></div><div class="honey-drip"></div>
+    <div class="honey-drip"></div><div class="honey-drip"></div>
+    <div class="honey-drip"></div><div class="honey-drip"></div>
+    <div class="honey-drip"></div><div class="honey-drip"></div>
+    <div class="honey-drip"></div>
+  </div>
+
+  <!-- Floating bees -->
+
+  <div class="bee">🐝</div>
+  <div class="bee">🐝</div>
+  <div class="bee">🐝</div>
+  <div class="bee">🐝</div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">Auburn, Alabama — est. by Emily & Cody Hill</p>
+
+```
+<!-- Top Hat SVG -->
+<svg class="hat-illustration" viewBox="0 0 200 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- brim -->
+  <ellipse cx="100" cy="170" rx="90" ry="18" fill="#1a1108"/>
+  <ellipse cx="100" cy="165" rx="90" ry="18" fill="#2a2010"/>
+  <!-- hat body -->
+  <rect x="40" y="40" width="120" height="130" rx="4" fill="#1a1108"/>
+  <!-- texture lines on hat -->
+  <rect x="40" y="40" width="120" height="130" rx="4" fill="url(#hatTexture)"/>
+  <defs>
+    <pattern id="hatTexture" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#1a1108"/>
+      <line x1="0" y1="8" x2="8" y2="0" stroke="#2a2515" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+  <!-- honeycomb band -->
+  <rect x="40" y="130" width="120" height="28" fill="#E8A820"/>
+  <!-- honeycomb pattern on band -->
+  <text x="48" y="150" font-size="18" opacity="0.3" fill="#C47D0A">⬡⬡⬡⬡⬡⬡</text>
+  <!-- RAW tag -->
+  <rect x="118" y="28" width="38" height="52" rx="2" fill="#f0ead0" transform="rotate(8 118 28)"/>
+  <text x="122" y="66" font-size="11" fill="#888" font-family="serif" transform="rotate(8 118 28)" opacity="0.7">RAW</text>
+  <!-- hat highlight -->
+  <rect x="45" y="45" width="8" height="80" rx="4" fill="white" opacity="0.04"/>
+</svg>
+
+<h1 class="hero-title">Mad<span>Nectar</span></h1>
+<p class="hero-subtitle">Apiary</p>
+<p class="hero-tagline">Down the rabbit hole and into the hive — where every jar tells a story.</p>
+<p class="hero-location">🐝 &nbsp; Auburn · Opelika · Salem, Alabama &nbsp; 🐝</p>
+<a href="#story" class="btn-primary">Enter the Hive</a>
+```
+
+  </div>
+</section>
+
+<!-- LOGO BANNER -->
+
+<div class="logo-banner">
+  <img src="logo-banner.jpeg" alt="Mad Nectar Apiary Banner" class="banner-img" />
+</div>
+
+<!-- STORY -->
+
+<section class="story" id="story">
+  <div class="story-inner">
+    <div class="story-text reveal">
+      <h2>A Curiouser <em>kind of honey</em> Story</h2>
+      <p>Like the Mad Hatter himself, Emily & Cody Hill march to the beat of their own drum — or rather, the hum of their own hive. What started as a curiosity about bees became a full-blown love affair with the art of beekeeping in the rolling Alabama countryside.</p>
+      <p>Every jar of Mad Nectar honey is raw, unfiltered, and alive with the flavors of the local wildflowers, clover fields, and Southern landscapes that the bees call home. No shortcuts. No compromises. Just pure, honest honey.</p>
+      <p style="font-family:'IM Fell English',serif; font-style:italic; font-size:1.2rem; color:var(--deep-honey);">"We didn't fall into beekeeping — we tumbled in, headfirst, just like Alice."</p>
+    </div>
+    <div class="story-image-box reveal">
+      <div class="stamp-circle">
+        <img src="logo-stamp.jpeg" alt="Mad Nectar Honey Company Stamp" style="width:100%;height:100%;object-fit:contain;border-radius:50%;padding:8px;" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HONEY VARIETIES -->
+
+<section class="varieties" id="honey">
+  <div class="varieties-hex-bg"></div>
+  <div class="varieties-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">— Straight from the hive —</span>
+      <h2>The Honey</h2>
+    </div>
+    <div class="varieties-grid">
+      <div class="variety-card reveal">
+        <span class="icon">🌸</span>
+        <h3>Wildflower</h3>
+        <p>A complex, ever-changing blend of whatever blooms across our Alabama acres. Each season brings a slightly different character — bold, floral, and wonderfully unpredictable.</p>
+        <span class="variety-label">Most Popular</span>
+      </div>
+      <div class="variety-card reveal">
+        <span class="icon">🍀</span>
+        <h3>Clover</h3>
+        <p>Light and sweet with a clean finish. Our classic clover honey is smooth, mild, and the perfect everyday honey for everything from morning tea to biscuits.</p>
+        <span class="variety-label">Fan Favorite</span>
+      </div>
+      <div class="variety-card reveal">
+        <span class="icon">🌲</span>
+        <h3>Seasonal & Raw</h3>
+        <p>What's in season is what's in the jar. Unfiltered, unheated, and absolutely alive — raw honey the way nature intended it, with all its pollen and goodness intact.</p>
+        <span class="variety-label">Pure Raw</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="process" id="process">
+  <div class="process-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">— How the magic happens —</span>
+      <h2>From Hive to Jar</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">𝟏</div>
+        <h4>The Bees Work</h4>
+        <p>Our bees forage the wildflowers and fields of East Alabama, collecting nectar and returning to their hives.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">𝟐</div>
+        <h4>We Harvest</h4>
+        <p>Emily & Cody carefully tend each hive, harvesting honeycomb frames when the time is right — never rushed.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">𝟑</div>
+        <h4>Raw & Unfiltered</h4>
+        <p>Honey is extracted and lightly strained — never heated, never over-processed. All the good stuff stays in.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">𝟒</div>
+        <h4>Into the Jar</h4>
+        <p>Hand-poured and sealed, ready to find its way to your table. Every jar is pure, raw Alabama honey.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE BANNER -->
+
+<div class="quote-banner">
+  <blockquote>"pure . raw . honey"</blockquote>
+  <cite>— Mad Nectar Apiary, Auburn, Alabama</cite>
+</div>
+
+<!-- MARKETS & LOCATIONS -->
+
+<section class="markets" id="markets">
+  <div class="markets-inner">
+    <div class="section-header reveal">
+      <span class="eyebrow">— Where to find us —</span>
+      <h2>Come Find the Hive</h2>
+    </div>
+    <div class="markets-grid">
+
+```
+  <div class="market-card reveal">
+    <span class="market-icon">🌿</span>
+    <h3>AU Farmer's Market</h3>
+    <p class="market-detail">Thursdays · 3–6pm</p>
+    <p class="market-sub">Late May through Early August</p>
+    <p class="market-location">📍 Auburn, Alabama</p>
+  </div>
+
+  <div class="market-card reveal">
+    <span class="market-icon">🎃</span>
+    <h3>Rockytop Market Days</h3>
+    <p class="market-detail">Pumpkin Patch & Country Christmas</p>
+    <p class="market-sub">Seasonal Events</p>
+    <p class="market-location">📍 Salem, Alabama</p>
+  </div>
+
+  <div class="market-card reveal">
+    <span class="market-icon">🎉</span>
+    <h3>Auburn Cityfest</h3>
+    <p class="market-detail">April</p>
+    <p class="market-sub">Annual Festival</p>
+    <p class="market-location">📍 Auburn, Alabama</p>
+  </div>
+
+  <div class="market-card reveal antique">
+    <span class="market-icon">🏺</span>
+    <h3>Angels Antiques</h3>
+    <p class="market-detail">Honey & Candles available year-round</p>
+    <p class="market-sub">Glass Case #125 — across from the registers</p>
+    <p class="market-location">📍 Columbus Pkwy, Opelika, AL</p>
+  </div>
+
+</div>
+```
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+  <div class="section-header reveal">
+    <span class="eyebrow" style="color:var(--honey);">— Find us —</span>
+    <h2>Come to the Tea Party</h2>
+  </div>
+  <div class="contact-grid reveal">
+    <a class="contact-item" href="tel:3343192626">
+      <span class="ci-label">Phone</span>
+      <span class="ci-value">334.319.2626</span>
+    </a>
+    <a class="contact-item" href="/cdn-cgi/l/email-protection#c2afa3a6ecaca7a1b6a3b082adb7b6aeadada9eca1adaf">
+      <span class="ci-label">Email</span>
+      <span class="ci-value"><span class="__cf_email__" data-cfemail="056864612b6b6066716477456a7071696a6a6e2b666a68">[email&#160;protected]</span></span>
+    </a>
+    <div class="contact-item">
+      <span class="ci-label">Location</span>
+      <span class="ci-value">Auburn, Alabama</span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <p>© 2025 <span>Mad Nectar Apiary</span> · Emily & Cody Hill · Auburn, Alabama · Pure. Raw. Honey.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c
